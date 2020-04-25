@@ -1,3 +1,15 @@
+#Made by: Kouah Mohammed Aymen
+#Computer science student at "National Computer science Engineering School, Algiers (ESI)"
+#E-mail: jm_kouah@esi.dz
+#Github: https://github.com/aymenkouah
+
+#written in the "Python" programming language
+#Requires installaling "pygame"
+#https://www.pygame.org/news
+
+#Go to the READ_me.md file for more info about how to play
+
+
 # Modules and packages
 
 import pygame
@@ -81,7 +93,6 @@ score = 0
 pygame.init()
 window = pygame.display.set_mode((width, height))
 
-
 game_running = True
 pause = False
 car_width = 50
@@ -89,8 +100,8 @@ ro = road(width, height, car_width)
 player1 = player(ro.road, height)
 enemmy = []
 
-# Functions
 
+# Functions
 
 def enemies(enemmy, road, player, height, enem_num):
     if len(enemmy) == 0 and enem_num < 1:
@@ -139,6 +150,7 @@ def text_to_screen_score(window, score, pos, text):
 
 while game_running:
     window.fill(background_color)
+    
     if not pause:
         enem_num, score = move_enemies(enemmy, height, enem_num, score)
         enem_num = enemies(enemmy, ro.road, player1, height, enem_num)
@@ -166,6 +178,7 @@ while game_running:
                 pause = not pause
 
     ##############
+    
     text_to_screen_score(window, score, (20, 20), "")
     pygame.display.update()
 
